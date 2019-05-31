@@ -1,0 +1,9 @@
+[run]
+branch = True
+
+[report]
+exclude_lines =
+    pragma: nocover
+
+    # Don't complain if tests don't hit defensive assertion code:
+    raise NotImplementedError

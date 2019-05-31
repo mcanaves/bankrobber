@@ -1,0 +1,7 @@
+.*
+!.coveragerc
+!.env
+!.isort.cfg
+!.mypy.cnf
+!.pylintrc
+README.md

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Unit test / coverage reports
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Environments
+.env
+venv/
+
+# mypy
+.mypy_cache/
+
+# Editos 
+.vscode
+*.code-workspace

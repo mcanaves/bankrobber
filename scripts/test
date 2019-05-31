@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+echo "==> Running tests..."
+docker run --rm -it -v $(pwd):/opt bankrobber pytest -W ignore::DeprecationWarning --cov=bankrobber --cov=tests --cov-fail-under=100 --cov-report=term-missing ${@}
+echo "==> Checking static typing..."
+docker run --rm -v $(pwd):/opt bankrobber mypy --config-file=.mypy.cfg bankrobber
+echo "==> Checking code format..."
+docker run --rm -v $(pwd):/opt bankrobber black --check config bankrobber tests
+echo "==> Checking the order of python imports..."
+docker run --rm -v $(pwd):/opt bankrobber isort --recursive --check-only config bankrobber tests

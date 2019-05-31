@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+export APP_ENV="local"
+if [ "$TRAVIS" = "true" ] ; then
+    export APP_ENV="test"
+fi
+
+echo "==> Building docker image..."
+docker build . --rm -t "bankrobber" --build-arg APP_ENV=$APP_ENV

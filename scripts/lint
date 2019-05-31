@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+echo "==> Formatting code..."
+docker run --rm -v $(pwd):/opt bankrobber black config bankrobber tests
+echo "==> Sorting python imports..."
+docker run --rm -v $(pwd):/opt bankrobber isort --recursive --apply config bankrobber tests
+echo "==> Linting..."
+docker run --rm -v $(pwd):/opt bankrobber pylint config bankrobber
