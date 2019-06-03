@@ -37,3 +37,10 @@ LOGGING = {
         }
     },
 }
+
+# BANK
+# -----------------------------------------------------------------------------
+N26 = {
+    "api_base_url": env("N26_API_BASE_URL", default="https://api.tech26.de"),
+    "api_base_auth": env("N26_API_BASE_AUTH", default="Basic YW5kcm9pZDpzZWNyZXQ="),
+}
